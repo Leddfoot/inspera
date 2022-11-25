@@ -1,10 +1,17 @@
-.app-wrapper {
+
+  @import "../css/variables";
+
+  @media (min-width: $breakpoint-text-box-width) {
+    .mpc-interaction {
+      max-width: 40em;
+
+    }
+  }
+  .app-wrapper {
   .body {
     padding: 1em;
   }
-  .text-interaction {
 
-  }
   .mpc-interaction {
     input {
       margin: 1em;

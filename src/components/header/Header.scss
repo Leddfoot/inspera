@@ -1,7 +1,13 @@
 .header {
+  height: 4em;
   display: flex;
+  flex-wrap:wrap;
   align-items: center;
+  flex-grow: 1;
+  justify-content: left;
   border-bottom: 1px solid #ccc;
+  color: var(--mpc-interaction--label-color);
+  background: var(--mpc-interaction--label-background);
 }
 
 .candidate, .time-remaining {
@@ -9,6 +15,11 @@
 }
 
 .theme-toggle {
-  padding: 0.25em;
-  margin: 0.5em;
+  position:absolute;
+  right: 0;
+  margin: 0;
+  color: var(--mpc-interaction--label-color);
+  background: var(--mpc-interaction--label-background);
+  border: none;
+  border-left: var(--theme-toggle--border-left);
 }
