@@ -33,7 +33,7 @@ const Header = () => {
         type="button"
         className="theme-toggle"
       >
-        {!darkTheme ? "Light Mode 😎" : "Dark mode 😀"}
+        {!darkTheme ? "Dark mode 😎" : "Light Mode 😀"}
       </button>
     </div>
   );
