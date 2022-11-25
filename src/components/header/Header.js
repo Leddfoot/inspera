@@ -26,8 +26,10 @@ const Header = () => {
       className="header"
       style={{ backgroundColor: "--mpc-interaction--label-background" }}
     >
-      <div className="candidate">Front-end Test Candidate</div>
-      <div className="time-remaining">{timeRemaining} seconds remaining</div>
+      <div className="header-text">
+        <div className="candidate">Front-end Test Candidate</div>
+        <div className="time-remaining">{timeRemaining} seconds remaining</div>
+      </div>
       <button
         onClick={() => setDarkTheme(!darkTheme)}
         type="button"

@@ -1,21 +1,29 @@
 .header {
   height: 4em;
-  display: flex;
-  flex-wrap:wrap;
-  align-items: center;
-  flex-grow: 1;
-  justify-content: left;
   border-bottom: 1px solid #ccc;
   color: var(--mpc-interaction--label-color);
   background: var(--mpc-interaction--label-background);
+}
+
+.header-text{  
+  height: 4em;
+  display: flex;
+  flex-wrap:wrap;
+  flex-basis: auto;
+  align-items: center;
 }
 
 .candidate, .time-remaining {
   padding: 0.5rem;
 }
 
+.time-remaining {
+  margin-right: 9.375em;
+}
+
 .theme-toggle {
   position:absolute;
+  top:0;
   right: 0;
   height: 4.75em;
   padding: 0 1.5em;
