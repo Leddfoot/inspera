@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "start": "webpack-dev-server --mode development",
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "dependencies": {
     "prop-types": "^15.6.1",

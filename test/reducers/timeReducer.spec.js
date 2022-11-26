@@ -5,6 +5,7 @@ describe('Time reducer', () => {
     it('should return the initial state', () => {
         expect(reducer(undefined, {})).toEqual({
             timeRemaining: 0,
+            "timeRemainingLocal": 0,
         });
     });
 
@@ -15,6 +16,19 @@ describe('Time reducer', () => {
         }
         expect(reducer(undefined, action)).toEqual({
             timeRemaining: 234,
+            "timeRemainingLocal": 234,
+        });
+    });
+
+    it('should decrement LOCAL remaining time by 1', () => {
+        const action = {
+            type: types.DECREMENT_LOCAL_TIME,
+            timeRemaining: 0,
+            "timeRemainingLocal": 7,
+        }
+        expect(reducer(undefined, action)).toEqual({
+            timeRemaining: 0,
+            "timeRemainingLocal": 6,
         });
     });
 });

@@ -2,7 +2,7 @@ import { types } from '../actions/timeActions';
 
 const defaultState = {
     timeRemaining: 0,
-    timeRemainingLocal: 66,
+    timeRemainingLocal: 0,
 };
 
 export default function (state = defaultState, action) {
