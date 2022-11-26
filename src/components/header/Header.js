@@ -4,7 +4,7 @@ import "./Header.scss";
 
 const Header = () => {
   const [darkTheme, setDarkTheme] = useState(false);
-  const timeRemaining = useSelector((state) => state.time.timeRemaining);
+  const timeRemainingLocal = useSelector((state) => state.time.timeRemainingLocal);
 
   useEffect(() => {
     const root = document.documentElement;
@@ -28,7 +28,7 @@ const Header = () => {
     >
       <div className="header-text">
         <div className="candidate">Front-end Test Candidate</div>
-        <div className="time-remaining">{timeRemaining} seconds remaining</div>
+        <div className="time-remaining">{timeRemainingLocal} seconds remaining</div>
       </div>
       <button
         onClick={() => setDarkTheme(!darkTheme)}

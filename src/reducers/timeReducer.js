@@ -2,6 +2,7 @@ import { types } from '../actions/timeActions';
 
 const defaultState = {
     timeRemaining: 0,
+    timeRemainingLocal: 66,
 };
 
 export default function (state = defaultState, action) {
@@ -10,9 +11,14 @@ export default function (state = defaultState, action) {
         return {
             ...state,
             timeRemaining: action.timeRemaining,
+            timeRemainingLocal: action.timeRemaining,
         };
-
-    default:
+    case types.DECREMENT_LOCAL_TIME:
+        return {
+            ...state,
+            timeRemainingLocal: action.timeRemainingLocal - 1,
+        };
+     default:
         return state;
     }
 }
