@@ -11,24 +11,37 @@ const GET_REMAINING_TIME_TIMER = 10 * 1000; // every 10 seconds
 const LOCAL_TIMER = 1000; // every second
 
 let interval;
-
+let decrementInterval;
+const defaultQuestionTime = 77;
 
 const App = () => {
   const dispatch = useDispatch();   
   const timeRemainingLocal = useSelector((state) => state.time.timeRemainingLocal);
 
+  //Proctoring continues despite lack of connection
+  //this function will start the local timer if there is a loss of connection to the server
   const updateTime = async () => {
-    const timeRemaining = await timeService.requestUpdatedTime();
-    dispatch(setRemainingTime(timeRemaining));
+    try{
+      const timeRemaining = await timeService.requestUpdatedTime();
+      dispatch(setRemainingTime(timeRemaining));
+    } catch(err) {
+      if (timeRemainingLocal === 0) { //start the local timer if not already started. 
+        dispatch(decrementLocalTime(defaultQuestionTime))
+      }
+    }
   };
+
+  //Question: does this properly clear the decrementInterval hook?
+  const stopTimer =()=> {
+    clearInterval(decrementInterval)
+  }
 
   const updateLocalTime = () => {
-    dispatch(decrementLocalTime(timeRemainingLocal));
+    timeRemainingLocal <= 0 ? stopTimer() : dispatch(decrementLocalTime(timeRemainingLocal));
   };
 
-
   useEffect( (timeRemainingLocal) => {
-    const decrementInterval = setInterval(() => {
+    decrementInterval = setInterval(() => {
       updateLocalTime(timeRemainingLocal);
     }, LOCAL_TIMER);
     return () => {
