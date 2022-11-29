@@ -3,8 +3,8 @@
 .header {
   height: 5em;
   border-bottom: 1px solid #ccc;
-  color: var(--mpc-interaction--label-color);
-  background: var(--mpc-interaction--label-background);  
+  color: $--mpc-interaction--label-color;
+  background: $--mpc-interaction--label-background;  
   display: flex;
   flex-wrap:wrap;
   align-items: center;
@@ -29,14 +29,17 @@
   right: 0;
   height: 6em;
   padding: 0 1.5em;
-  color: var(--mpc-interaction--label-color);
-  background: var(--mpc-interaction--label-background);
+  color: $--mpc-interaction--label-color;
+  background: $--mpc-interaction--label-background;
   border: none;
-  border-left: var(--theme-toggle--border-left);
+  border-left: $--theme-toggle--border-left;
 }
 
 
 @media (max-width: $breakpoint-mobile) {
+  .body {
+    background-color: red;
+  }
   .candidate, .time-remaining {
     padding:  .75rem 1rem;
   }
