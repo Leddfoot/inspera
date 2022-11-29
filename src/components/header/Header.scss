@@ -1,3 +1,5 @@
+@import "../../css/variables.scss";
+
 .header {
   height: 5em;
   border-bottom: 1px solid #ccc;
@@ -33,7 +35,7 @@
   border-left: var(--theme-toggle--border-left);
 }
 
-$breakpoint-mobile: 32.54em;
+
 @media (max-width: $breakpoint-mobile) {
   .candidate, .time-remaining {
     padding:  .75rem 1rem;
