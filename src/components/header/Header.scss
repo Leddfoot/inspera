@@ -1,10 +1,9 @@
-@use "../../css/variables" as var;
 
 .header {
   height: 5em;
   border-bottom: 1px solid #ccc;
-  color: var.$mpc-interaction--label-color;
-  background: var.$mpc-interaction--label-background;  
+  color: var(--mpc-interaction--label-color);
+  background: var(--mpc-interaction--label-background);  
   display: flex;
   flex-wrap:wrap;
   align-items: center;
@@ -29,14 +28,14 @@
   right: 0;
   height: 6em;
   padding: 0 1.5em;
-  color: var.$mpc-interaction--label-color;
-  background: var.$mpc-interaction--label-background;
+  color: var(--mpc-interaction--label-color);
+  background: var(--mpc-interaction--label-background);
   border: none;
-  border-left: var.$theme-toggle--border-left;
+  border-left: var(--theme-toggle--border-left);
 }
 
-
-@media (max-width: var.$breakpoint-mobile) {
+$breakpoint-mobile: 32.54em;
+@media (max-width: $breakpoint-mobile) {
   .candidate, .time-remaining {
     padding:  .75rem 1rem;
   }
